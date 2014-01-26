@@ -1,0 +1,13 @@
+{
+  "name": "flickr-app-server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "",
+  "author": "Joe Longstreet",
+  "license": "BSD",
+  "dependencies": {
+    "dirty": "~0.9.7",
+    "express": "~3.4.8"
+  }
+}
