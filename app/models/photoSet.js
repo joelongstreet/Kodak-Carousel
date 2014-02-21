@@ -1,0 +1,1 @@
+var photoSet = Backbone.Model.extend({});

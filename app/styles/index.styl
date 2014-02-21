@@ -1,0 +1,81 @@
+@import nib
+
+$colorBlack = #151515  
+$colorGrey  = #2e2e2e
+$colorWhite = #ffffff
+
+
+html, body
+  height 100%
+body
+  margin 0
+  background $colorGrey
+  font-family Helvetica, sans-serif
+
+
+.container
+  height 100%
+  width 90%
+  margin auto
+  box-sizing border-box
+  padding 5% 0
+
+
+.full-photo
+  width 100%
+  height 100%
+  .image
+    background-size contain
+
+
+.photoSet, .photo
+  z-index 1
+  position relative
+  background-color $colorBlack
+  box-shadow 0 0 5px $colorBlack
+  box-sizing border-box
+  width 30%
+  height 30%
+  float left
+  margin 0 5% 2.5% 0
+  opacity 1
+  transition all 1s
+  &:nth-child(3n+0)
+    margin-right 0
+  &.highlight
+    transform scale(1.1)
+    box-shadow 0 0 30px $colorBlack
+  &.fade
+    z-index 2
+    opacity .5
+  &.explode
+    z-index 2
+    transform scale(8)
+    opacity 0
+
+.photoSet
+  &:nth-child(7), &:nth-child(8), &:nth-child(9)
+    margin-bottom 0
+
+.photo
+  width 33%
+  height 33%
+  margin 0 .5% .5% 0
+
+
+.image
+  width 100%
+  height 100%
+  background-position center center
+  background-size cover
+  background-repeat no-repeat
+
+.info
+  font-size 1.2em
+  position absolute
+  height 5%
+  padding 4%
+  width 92%
+  background-color rgba($colorBlack, .7)
+  bottom 0
+  color rgba($colorWhite, .9)
