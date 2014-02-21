@@ -1,8 +1,9 @@
-var express   = require('express');
-var http      = require('http');
-var routes    = require('./lib/routes');
-var app       = express();
+var express = require('express');
+var http = require('http');
+var routes = require('./lib/routes');
+var app = express();
 
+app.use(express.static(process.cwd() + '/public'));
 
 app.get('/', routes.getAuthURL);
 app.get('/user/authorize', routes.getAuthURL);
