@@ -2,5 +2,7 @@ node_modules
 .DS_Store
 *.db
 bower_components
-public
+public/*
 !public/index.html
+!public/img/
+!public/img/*
