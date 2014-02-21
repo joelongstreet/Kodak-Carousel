@@ -11,8 +11,8 @@ module.exports = function(grunt) {
         src : [
           path.join(vendorPath, 'handlebars/handlebars.js'),
           path.join(vendorPath, 'jquery/jquery.js'),
-          path.join(vendorPath, 'underscore/underscore-min.js'),
-          path.join(vendorPath, 'backbone/backbone-min.js'),
+          path.join(vendorPath, 'underscore/underscore.js'),
+          path.join(vendorPath, 'backbone/backbone.js'),
           path.join(vendorPath, 'marionette/lib/backbone.marionette.js')
         ],
         dest : path.join(outputPath, 'vendor.js')
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         options: {
           namespace: 'templates',
           processName: function(filename) {
-            return filename.replace(/^app\/templates\//, '')
+            return filename.replace(/^client-app\/templates\//, '')
                   .replace(/\.hbs$/, '');
           }
         },
