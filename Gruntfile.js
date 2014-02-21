@@ -53,14 +53,8 @@ module.exports = function(grunt) {
 
 
     watch: {
-      scripts: {
-        files: ['app/**/*'],
-        tasks: ['default']
-      },
-      stylus: {
-        files: ['app/styles/**/*'],
-        tasks: ['stylus']
-      }
+      files: ['app/**/*'],
+      tasks: ['compile']
     }
   });
 
@@ -73,12 +67,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask('default', [
-    'concat',
-    'handlebars',
-    'browserify'
+    'watch',
   ]);
 
-  grunt.registerTask('styles', [
-    'watch:stylus'
+  grunt.registerTask('compile', [
+    'concat',
+    'handlebars',
+    'browserify',
+    'stylus'
   ]);
 };
