@@ -43,10 +43,23 @@ module.exports = function(grunt) {
     },
 
 
+    stylus: {
+      compile: {
+        files: {
+          'public/app.css' : 'app/styles/index.styl'
+        }
+      }
+    },
+
+
     watch: {
       scripts: {
         files: ['app/**/*'],
         tasks: ['default']
+      },
+      stylus: {
+        files: ['app/styles/**/*'],
+        tasks: ['stylus']
       }
     }
   });
@@ -63,5 +76,9 @@ module.exports = function(grunt) {
     'concat',
     'handlebars',
     'browserify'
+  ]);
+
+  grunt.registerTask('styles', [
+    'watch:stylus'
   ]);
 };
