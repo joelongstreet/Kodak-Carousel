@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 
     browserify: {
       dist: {
-        src: 'app/*.js',
+        src: 'client-app/app.js',
         dest: path.join(outputPath, 'app.js')
       }
     },
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
                   .replace(/\.hbs$/, '');
           }
         },
-        src: 'app/templates/*',
+        src: 'client-app/templates/*',
         dest: 'public/templates.js'
       }
     },
@@ -46,14 +46,14 @@ module.exports = function(grunt) {
     stylus: {
       compile: {
         files: {
-          'public/app.css' : 'app/styles/index.styl'
+          'public/app.css' : 'client-app/styles/index.styl'
         }
       }
     },
 
 
     watch: {
-      files: ['app/**/*'],
+      files: ['client-app/**/*'],
       tasks: ['compile']
     }
   });
