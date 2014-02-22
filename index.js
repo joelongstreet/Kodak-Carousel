@@ -5,9 +5,9 @@ var app = express();
 
 app.use(express.static(process.cwd() + '/public'));
 
-app.get('/', routes.getAuthURL);
-app.get('/user/authorize', routes.getAuthURL);
-app.get('/auth_callback', routes.authCallback);
+app.get('/*', routes.ui);
+app.get('/api/user/authorize', routes.getAuthURL);
+app.get('/api/auth_callback', routes.authCallback);
 app.get('/api/:method', routes.makeFlickrRequest);
 
 

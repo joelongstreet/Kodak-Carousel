@@ -3,6 +3,6 @@ node_modules
 *.db
 bower_components
 public/*
-!public/index.html
+!public/app.html
 !public/img/
 !public/img/*
