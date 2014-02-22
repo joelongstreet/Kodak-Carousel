@@ -1,5 +1,7 @@
-var app = new Backbone.Marionette.Application();
+var socket = io.connect('http://localhost');
+var app = new Marionette.Application();
 var mediator = require('./controllers/mediator');
+var Message = require('./views/message');
 app.addRegions({ mainRegion: '#main' });
 
 
@@ -13,9 +15,16 @@ app.addInitializer(function(){
 });
 
 
+socket.on('message', function(data) {
+  var model = new Backbone.Model({ message : data });
+  mediator.trigger('viewUpdate', new Message({ model : model }));
+});
+
+
 mediator.on('viewUpdate', function(newView){
   app.mainRegion.show(newView);
 });
+
 
 
 $(function(){

@@ -10,7 +10,11 @@ app.get('/api/user/authorize', routes.getAuthURL);
 app.get('/api/auth_callback', routes.authCallback);
 app.get('/api/:method', routes.makeFlickrRequest);
 
-
-http.createServer(app).listen(3000, function(){
+var server = http.createServer(app).listen(3000, function(){
   console.log('Express server listening on port 3000');
+});
+
+var io = require('socket.io').listen(server);
+io.sockets.on('connection', function(socket){
+  console.log('sockets connected');
 });
