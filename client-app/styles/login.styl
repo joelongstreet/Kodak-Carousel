@@ -1,0 +1,21 @@
+.login
+  opacity 0
+  transform translate(0, -100%)
+  color $colorWhite
+  width 30%
+  margin auto
+  padding-top 30%
+  transition all .6s ease-in-out
+  &.show
+    opacity 1
+    transform translate(0, 0%)
+  input
+    width 80%
+    display block
+    border none
+    font-family Helvetica
+    padding 5% 0 5% 25%
+    font-size 1.8em
+    font-weight bold
+    background $colorWhite url('/img/flickr_logo.png') no-repeat 10px center
+    background-size contain

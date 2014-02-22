@@ -1,3 +1,12 @@
 module.exports = Marionette.ItemView.extend({
-  template: templates.login
+
+  className: 'login',
+  template: templates.login,
+
+  onRender: function(){
+    var self = this;
+    setTimeout(function(){
+      $(self.el).addClass('show');
+    });
+  }
 });
