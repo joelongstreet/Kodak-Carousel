@@ -1,3 +1,5 @@
+var mediator = require('../mediator');
+
 module.exports = Marionette.ItemView.extend({
 
   className: 'login',
@@ -7,10 +9,11 @@ module.exports = Marionette.ItemView.extend({
   },
 
   submit: function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    var userId = $(this.el).find('input').val();
+    e.preventDefault(); e.stopPropagation();
+
+    var username = $(this.el).find('input').val();
     $(this.el).removeClass('show');
+    mediator.trigger('login', username);
   },
 
   onRender: function(){
