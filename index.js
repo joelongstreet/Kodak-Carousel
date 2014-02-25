@@ -9,9 +9,7 @@ app.use(express.static(process.cwd() + '/public'));
 
 
 app.get('/*', routes.ui);
-app.get('/api/user/authorize', routes.getAuthURL);
 app.get('/api/flickr/auth_callback', routes.authCallback);
-app.get('/api/:method', routes.makeFlickrRequest);
 
 
 var server = http.createServer(app).listen(3000, function(){
